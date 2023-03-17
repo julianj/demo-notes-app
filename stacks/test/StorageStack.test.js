@@ -1,9 +1,10 @@
 import { Template } from "aws-cdk-lib/assertions";
-import { App, getStack } from "@serverless-stack/resources";
+import { initProject } from "sst/project";
+import { App, getStack } from "sst/constructs";
 import { StorageStack } from "../StorageStack";
-import { test } from "vitest";
+import { it } from "vitest";
 
-test("Test StorageStack", () => {
+it("Test StorageStack", () => {
   const app = new App();
   // WHEN
   app.stack(StorageStack);

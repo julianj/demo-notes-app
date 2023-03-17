@@ -1,4 +1,4 @@
-import { Api, use } from "@serverless-stack/resources";
+import { Api, use } from "sst/constructs";
 import { StorageStack } from "./StorageStack";
 
 export function ApiStack({ stack, app }) {
@@ -17,12 +17,12 @@ export function ApiStack({ stack, app }) {
       },
     },
     routes: {
-      "GET /notes/{id}": "functions/get.main",
-      "GET /notes": "functions/list.main",
-      "POST /notes": "functions/create.main",
-      "PUT /notes/{id}": "functions/update.main",
-      "DELETE /notes/{id}": "functions/delete.main",
-      "POST /billing": "functions/billing.main",
+      "GET /notes/{id}": "services/functions/get.main",
+      "GET /notes": "services/functions/list.main",
+      "POST /notes": "services/functions/create.main",
+      "PUT /notes/{id}": "services/functions/update.main",
+      "DELETE /notes/{id}": "services/functions/delete.main",
+      "POST /billing": "services/functions/billing.main",
     },
   });
 

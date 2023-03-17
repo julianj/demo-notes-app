@@ -1,5 +1,5 @@
 import * as iam from "aws-cdk-lib/aws-iam";
-import { Cognito, use } from "@serverless-stack/resources";
+import { Cognito, use } from "sst/constructs";
 import { StorageStack } from "./StorageStack";
 import { ApiStack } from "./ApiStack";
 
