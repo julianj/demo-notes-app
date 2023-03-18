@@ -45,7 +45,7 @@
     ]
   },
   "devDependencies": {
-    "sst": "2.1.16",
+    "sst": "2.x",
     "constructs": "10.1.156"
   }
 }

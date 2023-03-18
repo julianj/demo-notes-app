@@ -2,13 +2,15 @@
   "name": "notes",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "sst dev`",
     "build": "sst build",
     "deploy": "sst deploy",
     "remove": "sst remove",
     "console": "sst console",
-    "test": "sst bind -- vitest run"
+    "test": "sst bind vitest run",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "sst": "2.x",
@@ -19,6 +21,6 @@
     "vitest": "^0.28.5"
   },
   "workspaces": [
-    "services"
+    "packages/*"
   ]
 }

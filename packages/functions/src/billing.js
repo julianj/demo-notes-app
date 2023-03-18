@@ -1,6 +1,6 @@
 import Stripe from "stripe";
-import handler from "../util/handler";
-import { calculateCost } from "../util/cost";
+import handler from "@notes/core/src/handler";
+import { calculateCost } from "@notes/core/src/cost";
 
 export const main = handler(async (event) => {
     // storage is the number of notes the user would like to store in his account. 

@@ -2,9 +2,9 @@ import { Api, use } from "sst/constructs";
 import { StorageStack } from "./StorageStack";
 
 export function ApiStack({ stack, app }) {
-  const { table } = use(StorageStack);
+  const { table } = use(StorageStack); // references the `table` resource from our StorageStack
 
-  // Create the API
+  // Create the API with name "Api" using the SST Api construct
   const api = new Api(stack, "Api", {
     defaults: {
       authorizer: "iam",
@@ -17,12 +17,12 @@ export function ApiStack({ stack, app }) {
       },
     },
     routes: {
-      "GET /notes/{id}": "services/functions/get.main",
-      "GET /notes": "services/functions/list.main",
-      "POST /notes": "services/functions/create.main",
-      "PUT /notes/{id}": "services/functions/update.main",
-      "DELETE /notes/{id}": "services/functions/delete.main",
-      "POST /billing": "services/functions/billing.main",
+      "GET /notes/{id}": "packages/functions/src/get.main",
+      "GET /notes": "packages/functions/src/list.main",
+      "POST /notes": "packages/functions/src/create.main",
+      "PUT /notes/{id}": "packages/functions/src/update.main",
+      "DELETE /notes/{id}": "packages/functions/src/delete.main",
+      "POST /billing": "packages/functions/src/billing.main",
     },
   });
 
